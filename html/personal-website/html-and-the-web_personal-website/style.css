@@ -1,0 +1,41 @@
+* {
+  box-sizing: border.box;
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  background-color: aquamarine;
+}
+nav {
+  background-color: rgb(183, 248, 227);
+  text-align: center;
+}
+figure {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: auto;
+  text-align: center;
+}
+h1 {
+  text-align: center;
+}
+
+article {
+  background-color: rgb(183, 248, 227);
+  text-align: left;
+  margin: 20px;
+  border-top: 3px rgb(50, 194, 146);
+}
+
+footer {
+  background-color: rgb(183, 248, 227);
+  text-align: left;
+  margin: 20px;
+}
+hr {
+  margin: 10px;
+  border: 3px solid rgb(50, 194, 146);
+  border-radius: 5px;
+}
