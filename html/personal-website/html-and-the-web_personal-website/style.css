@@ -4,13 +4,36 @@
   margin: 0px;
 }
 body {
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
   background-color: aquamarine;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header {
+  position: relative;
+  margin-top: 40px;
 }
 nav {
+  height: 33px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  width: 100%;
+  font-size: 22px;
   background-color: rgb(183, 248, 227);
   text-align: center;
+  position: fixed;
+  top: 5px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 0px;
+  padding-top: 22px;
+  z-index: 1;
+}
+main {
+  margin-top: 20px;
 }
 figure {
+  scale: 1;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -18,9 +41,15 @@ figure {
   height: auto;
   text-align: center;
 }
+figcaption {
+  color: deeppink;
+  font: weight 200px;
+  font-size: 33px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 h1 {
   text-align: center;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 30;
 }
 
@@ -50,6 +79,19 @@ a:hover {
 }
 a {
   color: deeppink;
+  background-color: none;
+}
+p {
+  padding-bottom: 20px;
+}
+
+.exit {
+  background-color: none;
+  scale: 0.12;
+  position: fixed;
+  bottom: -15%;
+
+  left: -340px;
 }
 /*
 a:visited {
