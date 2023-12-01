@@ -1,3 +1,10 @@
+:root {
+  --color-black-light: #303030;
+  --color-primary: #8236ffff;
+  --color-white: #ffffff;
+  --border-radius: 4px;
+}
+
 *,
 *::before,
 *::after {
@@ -11,12 +18,12 @@ body {
 }
 
 header {
-  background: rgb(48 48 48 / 100%);
+  background: var(--color-black-light);
 }
 
 h1 {
   text-align: center;
-  color: white;
+  color: var(--color-white);
   line-height: 1.4;
   margin: 0;
   letter-spacing: 0.025em;
@@ -29,7 +36,7 @@ h2 {
 }
 
 strong {
-  color: #8236ff;
+  color: var(--color-primary);
 }
 
 section {
@@ -57,12 +64,12 @@ figure {
   gap: 10px;
   margin: 0;
   padding: 10px;
-  background-color: #8236ffff;
-  border-radius: 4px;
+  background-color: var(--color-primary);
+  border-radius: var(--border-radius);
 }
 
 figcaption {
-  color: rgb(255 255 255);
+  color: var(--color-white);
 }
 
 nav {
@@ -75,25 +82,25 @@ a {
   display: inline-block;
   font-size: smaller;
   padding: 8px;
-  border-radius: 4px;
-  background-color: hsl(263, 100%, 61%);
+  border-radius: var(--border-radius);
+  background-color: var(--color-primary);
   color: #fff;
 }
 
 a:hover,
 a:focus-visible {
-  background-color: rgb(48 48 48);
+  background-color: var(--color-black-light);
   text-decoration: none;
 }
 
 mark {
-  background-color: rgb(130, 54, 255);
-  color: #ffffff;
-  border-radius: 4px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--border-radius);
   letter-spacing: 0.025em;
 }
 
 ::selection {
-  background-color: #303030;
-  color: #8236ff;
+  background-color: var(--color-black-light);
+  color: var(--color-primary);
 }
