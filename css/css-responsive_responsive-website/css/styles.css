@@ -244,10 +244,82 @@ width, etc. */
 
 /* Media Query Tablet */
 /* --- */
-/* Replace this comment with your media query. */
+@media (min-width: 600px) {
+  .card-section {
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+  .--forest {
+    width: 45%;
+  }
+  .--mountain {
+    width: 45%;
+  }
+  .--river {
+    width: 45%;
+  }
+  .intro-text {
+    color: var(--dark-beige);
+    font-size: var(--regular-text);
+    line-height: var(--regular-text-line-height);
+    flex: 45%;
+    padding-right: 10%;
+  }
+  .--ocean {
+    background-image: url("../img/ocean.jpg");
+    background-size: cover;
+    width: 45%;
+  }
+
+  .--desert {
+    background-image: url("../img/desert.jpg");
+    background-size: cover;
+    width: 45%;
+  }
+}
 /* --- */
 
 /* Media Query Desktop */
 /* --- */
-/* Replace this comment with your media query. */
-/* --- */
+@media (min-width: 1200px) {
+  .card-section {
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+  .--forest {
+    width: 100%;
+  }
+  .--mountain {
+    width: 45%;
+  }
+  .--river {
+    width: 45%;
+  }
+  .intro-text {
+    color: var(--dark-beige);
+    font-size: var(--regular-text);
+    line-height: var(--regular-text-line-height);
+    flex: 45%;
+    padding-left: 10%;
+  }
+  .--ocean {
+    background-image: url("../img/ocean.jpg");
+    background-size: cover;
+    width: 45%;
+  }
+
+  .--desert {
+    background-image: url("../img/desert.jpg");
+    background-size: cover;
+    width: 45%;
+    margin-left: 25%;
+  }
+}
