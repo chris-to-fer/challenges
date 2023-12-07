@@ -1,3 +1,4 @@
+/*
 ## Calculate Circle Area and Circumference 🌶️🌶️🌶️
 
 ### Steps
@@ -25,3 +26,19 @@
 
 6. Run your JavaScript program to see the calculated area and circumference of
    the circle with the specified radius.
+   */
+
+let radius = 5;
+let circleArea = Math.PI * Math.pow(radius, 2);
+let circumference = 2 * Math.PI * radius;
+
+console.log(
+  "For a circle with the radius of",
+  radius,
+  "units: The area is approx.",
+  circleArea.toFixed(2),
+  "square units.",
+  "The circumference is approx.",
+  circumference.toFixed(2),
+  "units."
+);
