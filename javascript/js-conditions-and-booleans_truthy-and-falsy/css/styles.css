@@ -16,3 +16,11 @@ legend {
 li {
   margin-bottom: 1em;
 }
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
