@@ -4,18 +4,18 @@
   margin-top: 0px;
 }
 body {
-  .width: 700px;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  .width: 100vw;
   margin: 15px;
   background-color: aquamarine;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 header {
   position: relative;
-  margin-top: 40px;
 }
 nav {
-  height: 33px;
-
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   width: 100%;
   font-size: 22px;
@@ -26,7 +26,7 @@ nav {
   left: 50%;
   transform: translate(-50%, -50%);
   margin-top: 0px;
-  padding-top: 22px;
+  padding-top: 13px;
   z-index: 1;
 }
 main {
@@ -53,19 +53,14 @@ h1 {
   font-weight: 30;
 }
 p {
-  padding-top: 10px;
-}
-section {
-  width: 68%;
-  background-color: rgb(183, 248, 227);
-  border-radius: 30px;
-
-  padding: 10px;
+  padding-top: 0px;
 }
 
 article {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
+  flex-flow: nowrap;
 
   text-align: left;
   margin: 10px;
@@ -74,10 +69,31 @@ article {
   padding: 10px;
 }
 
+section {
+  background-color: rgb(183, 248, 227);
+  border-radius: 30px;
+
+  padding: 10px;
+}
+aside {
+  .display: inline-block;
+  flex-grow: 1;
+
+  position: sticky;
+  top: 0;
+  height: 65vh;
+
+  right: 0px;
+  background-color: rgb(183, 248, 227);
+  padding: 10px;
+  border-radius: 30px;
+  z-index: 2;
+}
+
 footer {
   background-color: rgb(183, 248, 227);
   text-align: left;
-  margin: 10px;
+  margin: 20px;
   border-radius: 30px;
   padding: 10px;
   position: relative;
@@ -99,21 +115,23 @@ a {
   .background-color: none;
   scale: 0.12;
   position: fixed;
-  bottom: -67px;
+  bottom: -87px;
 
   left: -92.5px;
 }
-aside {
-  display: inline-block;
-  width: 25%;
-  position: sticky;
-  top: 0;
-  height: 65vh;
-  right: 0px;
-  background-color: rgb(183, 248, 227);
-  padding: 10px;
-  border-radius: 30px;
-  z-index: 2;
+@media (max-width: 600px) {
+  article {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    text-align: left;
+    margin: 10px;
+
+    border-radius: 30px;
+    padding: 10px;
+  }
 }
 /*
 a:visited {
