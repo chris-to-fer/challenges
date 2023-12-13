@@ -13,6 +13,8 @@ Hint: Access the value by using `.value` on the input element
 */
 //const input = document.querySelector('[data-js="first-input"]')
 //const bup = document.querySelector('[data-js="button-uppercase"]')
+//Sorry i pushed to main so no comparison :(
+
 const bdown = document.querySelector('[data-js="button-lowercase"]');
 
 const input = document.querySelector('[data-js="first-input"]');
