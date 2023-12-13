@@ -10,6 +10,34 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <section></section>
+    <section>
+      <fieldset>
+        <p>Please enter your personal information!</p>
+        <fieldset>
+          <legend>Personal Information</legend>
+          <label for="firstName">First Name:</label>
+          <input type="text" name="firstName" id="firstName" />
+          <label for="lastName">First Name:</label>
+          <input type="text" name="lastName" id="lastName" />
+          <label for="birthday">Your Birthday:</label>
+          <input type="date" name="birthday" id="birthday" />
+        </fieldset>
+        <p>Tell us more we want to spam you, we want to know everything!</p>
+        <fieldset>
+          <legend>Further Information</legend>
+          <label for="color">Favorite Color:</label>
+          <input type="color" name="color" id="color" value="#E5430F" />
+          <label for="pet">What is your favorite pet?</label>
+          <select name="petSelector" id="pet">
+            <option value="notAnOption">--Please choose an option--</option>
+            <option value="donkey">donkey</option>
+            <option value="rhino">rhino</option>
+            <option value="ant">ant</option>
+          </select>
+        </fieldset>
+        <label for="submit" value="Sumbit"></label>
+        <button aria-label="Submit Button" type="submit">Submit</button>
+      </fieldset>
+    </section>
   </body>
 </html>
