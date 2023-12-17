@@ -11,15 +11,15 @@ function renderStars(filledStars) {
   for (let i = 1; i <= 5; i++) {
     const image = document.createElement("img");
     if (filledStars >= i) {
-      image.src = "../assets/star-filled.svg";
-      starContainer.append(image);
+      image.src = "assets/star-filled.svg";
+      // starContainer.append(image);
     } else {
-      image.src = "../assets/star-empty.svg";
-      image.addEventListener("click", () => {
-        renderStars(i);
-      });
-      starContainer.append(image);
+      image.src = "assets/star-empty.svg";
     }
+    image.addEventListener("click", () => {
+      renderStars(i);
+    });
+    starContainer.append(image);
   }
 }
 //--^-- your code here --^--
