@@ -16,18 +16,18 @@ ul {
   justify-content: center;
   border: none;
   border-radius: 7px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   background-color: darkslategrey;
   color: white;
 }
 
 button {
-background-color: transparent;
-border: none;
-fill: white;
-justify-self: center;
-
+  background-color: transparent;
+  border: none;
+  fill: white;
+  justify-self: center;
 }
 
 a {
@@ -35,7 +35,7 @@ a {
   color: lightgreen;
   grid-column: 1 / 3;
   margin: 10px;
-  margin-left:0;
+  margin-left: 0;
 }
 
 a:hover {
