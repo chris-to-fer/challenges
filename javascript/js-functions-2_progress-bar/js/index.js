@@ -18,7 +18,6 @@ For that:
  (HINT: you can add a 'scroll' event listener to the document )
  (HINT: you can change the width of an element like this: element.style.width = '10px')
 */
-
 const progressBar = document.querySelector('[data-js="progress-bar"]');
 
 progressBar.style.width = "0%";
