@@ -1,4 +1,6 @@
 /*
+Tip Calculator challenge form JS Var and Num Session:
+
 Steps
 Create a new JavaScript file in VS Code.
 Initialize a assign values to 2 variables:
