@@ -63,10 +63,10 @@ section {
   border-left: solid 5px orange;
   /* your solution */
 }
-/*section:nth-child(2) {
+.favourites {
   border-left: solid 5px gold;
 }
-*/
+
 /* ------- Headings Part 2 ------- */
 
 /* Task 6: The headings of our sections somehow look boring. Therefore, we want to change this:
@@ -85,11 +85,10 @@ section {
   /* your solution */
 }
 
-.subtitle:nth-child(2) {
+.favourites h2 {
   border-left: solid 3px orange;
   border-right: solid 3px orange;
-  padding: 10px;
-  display: inline;
+
   /* your solution */
 }
 
