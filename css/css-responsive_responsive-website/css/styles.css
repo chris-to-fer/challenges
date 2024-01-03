@@ -244,10 +244,74 @@ width, etc. */
 
 /* Media Query Tablet */
 /* --- */
-/* Replace this comment with your media query. */
+@media (min-width: 600px) {
+  .card-section {
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .--forest {
+    width: 45%;
+  }
+  .--mountain {
+    width: 45%;
+  }
+  .--river {
+    width: 45%;
+  }
+  .intro-text {
+    color: var(--dark-beige);
+    font-size: var(--regular-text);
+    line-height: var(--regular-text-line-height);
+    width: 45%;
+
+    justify-content: center;
+  }
+  .--ocean {
+    background-image: url("../img/ocean.jpg");
+    background-size: cover;
+    width: 45%;
+  }
+
+  .--desert {
+    background-image: url("../img/desert.jpg");
+    background-size: cover;
+    width: 45%;
+  }
+}
 /* --- */
 
 /* Media Query Desktop */
 /* --- */
-/* Replace this comment with your media query. */
-/* --- */
+@media (min-width: 1200px) {
+  .card-section {
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card-section > * {
+    width: 45%;
+  }
+  .--forest {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .intro-text {
+    justify-content: center;
+    width: 45%;
+  }
+  body {
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
