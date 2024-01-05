@@ -3,14 +3,24 @@ import { Card } from "./components/Card/Card.js";
 import { checkFilteredNews, checkSortedNews } from "./utils/results.js";
 
 const container = document.querySelector('[data-js="card-container"]');
+/*
+### Part 1: Filter
 
+Have a look at the `./js/index.js` file: There is a variable `filteredNews` declared with `news.filter()` and a return value `true`.
+
+You task is to change the filter method:
+
+- filter all cards which have the category "politics" in their category array
+- to do so, use the `includes` method on `card.categories`
+- don't forget to remove the return statement because you don't need it.
+*/
 // Part 1 - start here
-const filteredNews = news.filter(() => {
-  return true;
+const filteredNews = news.filter((card) => {
+  return card.categories.includes("politics");
 });
 
 // Part 2 - start here
-const sortedNews = filteredNews;
+const sortedNews = filteredNews.sort((a, b) => a.body.length - b.body.length);
 
 sortedNews.forEach((news) => {
   const cardElement = Card(news);
