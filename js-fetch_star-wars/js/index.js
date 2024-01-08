@@ -40,7 +40,14 @@ renderElement(firstCard);
 fetchDataAndRender();
 
 // --v-- your code below this line --v--
+//const url = "https://swapi.dev/api/people";
 
-function fetchDataAndRender() {
-  fetch(); // ?
+async function fetchDataAndRender() {
+  const url = "https://swapi.dev/api/people";
+  const response = await fetch(url);
+  const data = await response.json();
+  console.log(data);
+  data.results.forEach((e) => renderElement(Card(e)));
+
+  // ?
 }
