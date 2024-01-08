@@ -43,11 +43,16 @@ fetchDataAndRender();
 //const url = "https://swapi.dev/api/people";
 
 async function fetchDataAndRender() {
-  const url = "https://swapi.dev/api/people";
-  const response = await fetch(url);
-  const data = await response.json();
-  console.log(data);
-  data.results.forEach((e) => renderElement(Card(e)));
+  try {
+    const url = "https://swapi.dev/api/people";
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data);
+    data.results.forEach((e) => renderElement(Card(e)));
+    response.ok ? console.log("HTTP OK") : console.log("HTTP ERROR");
+  } catch {
+    console.error(error);
+  }
 
   // ?
 }
