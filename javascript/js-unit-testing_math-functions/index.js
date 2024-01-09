@@ -17,3 +17,4 @@ export function divide(a, b) {
 
   return a / b;
 }
+console.log(3 / 0);
