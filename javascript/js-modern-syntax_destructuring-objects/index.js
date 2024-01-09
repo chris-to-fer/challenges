@@ -50,5 +50,5 @@ const person = {
   firstName: "Alex",
 };
 
-export const { lasName: personLastName, ...moreInformation } = person;
+export const { lastName: personLastName, ...moreInformation } = person;
 console.log(personLastName, moreInformation);
