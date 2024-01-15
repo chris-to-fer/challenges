@@ -1,15 +1,19 @@
-//console.clear();
+console.clear();
 import React from "react";
 import "./styles.css";
 
 export default function App() {
-  function handleClick() {
+  function Click() {
     return () => console.log("OK");
   }
-  return <Button color=" #FFA500" text="Press me" onClick={handleClick} />;
+  return (
+    <Button color="yellow" text="Press me" onClick={Click} disabled={false} />
+  );
 }
 
-function Button({ color, disabled, text, onClick }) {
+function Button(props) {
+  const { color, disabled, text, onClick } = props;
+  console.log(props);
   return (
     <div>
       <button
