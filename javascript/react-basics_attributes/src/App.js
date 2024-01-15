@@ -12,7 +12,7 @@ function Article() {
       <p>The articel istelf</p>
       <label htmlFor="id"></label>
       <input id="id"></input>
-      <a className="article_link" href="https://react.dev/">
+      <a className="article__link" href="https://react.dev/">
         Link to React
       </a>
     </article>
