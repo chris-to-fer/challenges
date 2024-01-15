@@ -1,11 +1,11 @@
 console.clear();
+import Click from "./components/handleClick";
+import Button from "./components/Button.js";
+
 import React from "react";
 import "./styles.css";
 
 export default function App() {
-  function Click(name) {
-    return () => console.log("OK", name);
-  }
   return (
     <article>
       <Button
@@ -25,19 +25,5 @@ export default function App() {
         disabled={false}
       />
     </article>
-  );
-}
-
-function Button({ color, disabled, text, onClick, size, name }) {
-  return (
-    <div>
-      <button
-        style={{ backgroundColor: color, fontSize: size }}
-        disabled={disabled}
-        onClick={onClick(name)}
-      >
-        {text}
-      </button>
-    </div>
   );
 }
