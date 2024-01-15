@@ -8,7 +8,7 @@ export default function App() {
 function Article() {
   return (
     <article className="article">
-      <h2 className="article_title">Artikel Headline</h2>
+      <h2 className="article__title">Artikel Headline</h2>
       <p>The articel istelf</p>
       <label htmlFor="id"></label>
       <input id="id"></input>
