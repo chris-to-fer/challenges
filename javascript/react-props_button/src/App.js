@@ -3,23 +3,38 @@ import React from "react";
 import "./styles.css";
 
 export default function App() {
-  function Click() {
-    return () => console.log("OK");
+  function Click(name) {
+    return () => console.log("OK", name);
   }
   return (
-    <Button color="yellow" text="Press me" onClick={Click} disabled={false} />
+    <article>
+      <Button
+        name="B1"
+        size={24}
+        color="yellow"
+        text="Press me"
+        onClick={Click}
+        disabled={false}
+      />
+      <Button
+        name="B2"
+        size={24}
+        color="blue"
+        text="Press me"
+        onClick={Click}
+        disabled={false}
+      />
+    </article>
   );
 }
 
-function Button(props) {
-  const { color, disabled, text, onClick } = props;
-  console.log(props);
+function Button({ color, disabled, text, onClick, size, name }) {
   return (
     <div>
       <button
-        style={{ backgroundColor: color }}
+        style={{ backgroundColor: color, fontSize: size }}
         disabled={disabled}
-        onClick={onClick()}
+        onClick={onClick(name)}
       >
         {text}
       </button>
