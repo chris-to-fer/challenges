@@ -1,4 +1,5 @@
 import "./styles.css";
+console.clear();
 
 import avatar from "./img/avatar.jpg";
 import logo from "./img/logo.jpg";
@@ -20,7 +21,7 @@ export default function App() {
           <Link href="#about">About</Link>
           <Link href="#impressum">Impressum</Link>
         </Navigation>
-        <Avatar src={avatar} alt="avatar" />
+        <Avatar src={avatar} alt="avatar" clickText="You got me!" />
       </Header>
       <main>content goes here…</main>
     </>

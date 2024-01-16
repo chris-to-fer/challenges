@@ -1,10 +1,13 @@
 import Image from "./Image";
 
-export default function Avatar({ src, alt }) {
+export default function Avatar({ src, alt, clickText }) {
+  function onClickAvatar() {
+    return () => console.log(clickText);
+  }
   return (
     <button
       type="button"
-      onClick={() => console.log("I could toggle a profile!")}
+      onClick={onClickAvatar(clickText)}
       aria-label="toggle profile"
     >
       <Image src={src} alt={alt} />
