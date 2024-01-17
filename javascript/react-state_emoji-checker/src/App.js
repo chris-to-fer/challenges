@@ -1,50 +1,33 @@
 import React from "react";
 import "./styles.css";
+import { useState } from "react";
 
 export default function App() {
-  let code = "?";
+  //let code = [];
+  const [code, setCode] = useState("");
+  console.log(code);
+
+  function handleClick({ element }) {
+    console.log("Update Code!");
+    console.log(code);
+    setCode(code + element);
+  }
 
   const validCode = "🐡🐠🐋";
 
   return (
     <div className="container">
       <div className="button-container">
-        <button
-          type="button"
-          onClick={() => {
-            console.log("Update Code!");
-          }}
-        >
-          <span role="img" aria-label="Pufferfish">
-            🐡
-          </span>
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            console.log("Update Code!");
-          }}
-        >
-          <span role="img" aria-label="Whale">
-            🐋
-          </span>
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            console.log("Update Code!");
-          }}
-        >
-          <span role="img" aria-label="Clownfish">
-            🐠
-          </span>
-        </button>{" "}
+        <Button element="🐡" ariaLabel="Pufferfish" handleClick={handleClick} />
+        <Button element="🐋" ariaLabel="Whale" handleClick={handleClick} />
+        <Button element="🐠" ariaLabel="Clownfish" handleClick={handleClick} />
       </div>
 
       <button
         type="button"
         onClick={() => {
           console.log("Reset Code!");
+          setCode("");
         }}
       >
         Reset
@@ -53,5 +36,17 @@ export default function App() {
 
       {code === validCode && <p>Valid code!</p>}
     </div>
+  );
+}
+
+function Button({ element, ariaLabel, handleClick, code }) {
+  return (
+    <>
+      <button type="button" onClick={() => handleClick({ code, element })}>
+        <span role="img" aria-label={ariaLabel}>
+          {element}
+        </span>
+      </button>
+    </>
   );
 }
