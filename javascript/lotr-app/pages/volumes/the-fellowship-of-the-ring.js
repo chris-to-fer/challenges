@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Fellowship() {
   const book = volumes.find((e) => e.slug === "the-fellowship-of-the-ring");
   const index = volumes.map((e, i) =>
-    e.slug === "the-fellowship-of-the-ring" ? volumes.indexOf(e) : -1
+    e.slug === book.slug ? volumes.indexOf(e) : -1
   );
   const indexHit = Math.max(...index);
   console.log("hit", indexHit);
