@@ -38,7 +38,7 @@ export default function Towers() {
       <br></br>
       <Image
         // src="/resources/public/images/the-return-of-the-king"
-        src={`/${book.slug}.png`}
+        src={`${book.cover}`}
         height={230}
         width={140}
         alt={book.title}
