@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { volumes } from "../../lib/data.js";
+import { volumes } from "../../../lib/data.js";
 
 export default function VolumeDetail() {
   const volumeIndex = volumes.findIndex(
-    ({ slug }) => slug === "the-two-towers"
+    ({ slug }) => slug === "the-return-of-the-king"
   );
 
   const volume = volumes[volumeIndex];
