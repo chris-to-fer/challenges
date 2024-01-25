@@ -1,7 +1,14 @@
+import Link from "next/link";
+
 export default function HomePage() {
   return (
-    <div>
-      <h1>Hello from Next.js</h1>
-    </div>
+    <>
+      <h1>Find here a link to the LOTR stuff:</h1>
+      <h2>
+        <Link href="/volumes" alt="lotr links">
+          All 3 Titles
+        </Link>
+      </h2>
+    </>
   );
 }
