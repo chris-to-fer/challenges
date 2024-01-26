@@ -31,7 +31,7 @@ export default function Towers() {
       )}
       ---
       {indexHit > -1 ? (
-        <Link href={`/volumes/${volumes[indexHit + 1].slug}`}>Next</Link>
+        <Link href={`/volumes/${volumes[indexHit + 1]?.slug}`}>Next</Link>
       ) : (
         ""
       )}
