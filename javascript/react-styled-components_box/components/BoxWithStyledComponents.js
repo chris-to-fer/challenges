@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledBox = styled.div`
+export default styled.div`
   width: 100px;
   height: 100px;
   background-color: green;
