@@ -21,7 +21,7 @@ export default function GameForm({ onCreateGame }) {
         .split(",")
         .map((name) => name.trim()),
     });
-    form.reset();
+    //form.reset();
     router.push("/game");
   }
 
@@ -36,15 +36,15 @@ export default function GameForm({ onCreateGame }) {
         name="nameOfGame"
         labelText="Name of game"
         placeholder="e.g. Dodelido"
-        required
+        //required
       />
       <Input
         name="playerNames"
         labelText="Player names, separated by comma"
         placeholder="e.g. John Doe, Jane Doe"
-        required
+        //required
       />
-      <Button>Create game</Button>
+      <Button type="submit">Create game</Button>
     </Form>
   );
 }
