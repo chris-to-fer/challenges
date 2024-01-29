@@ -35,6 +35,8 @@ export default function App({ Component, pageProps }) {
   let isDimmed = false;
   lightsOn < 1 ? (isDimmed = "true") : (isDimmed = "false");
 
+  // const isDimmed =
+  //   light.filter((light) => light.isOn === false).length === light.length;
   return (
     <Layout lightsOn={lightsOn} isDimmed={isDimmed}>
       <GlobalStyle />
