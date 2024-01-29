@@ -4,6 +4,7 @@ import GameForm from "./index";
 import { toBeInTheDocument } from "@testing-library/jest-dom/matchers";
 import Button from "../Button";
 import Input from "../Input";
+import { Form } from "./index";
 
 jest.mock("next/router", () => ({
   useRouter() {
@@ -40,19 +41,48 @@ test("submits the correct form data when every field is filled out", async () =>
   const user = userEvent.setup();
 
   render(
-    <GameForm onSubmit={handleSubmit} onCreateGame={onCreateGame}></GameForm>
+    <GameForm onCreateGame={onCreateGame}>
+      <Form
+        onSubmit={handleSubmit}
+        aria-labelledby="formHeader"
+        autoComplete="off"
+      >
+        <h2 id="formHeader">Create a new game</h2>
+        <Input
+          name="nameOfGame"
+          labelText="Name of game"
+          placeholder="e.g. Dodelido"
+          //required
+        />
+        <Input
+          name="playerNames"
+          labelText="Player names, separated by comma"
+          placeholder="e.g. John Doe, Jane Doe"
+          //required
+        />
+        <Button type="submit">Create game</Button>
+      </Form>
+    </GameForm>
   );
 
+  const form = screen.getByRole("form", { name: /Create a new game/i });
   const button = screen.getByRole("button", { name: "Create game" });
-  const inputGame = screen.getByRole("textbox", { name: /Name of game/i });
-  const inputPlayers = screen.getByRole("textbox", {
-    name: /Player names, separated by comma/i,
-  });
+  const inputGame = screen.getByLabelText(/Name of game/i);
+  const inputPlayers = screen.getByLabelText(
+    /Player names, separated by comma/i
+  );
 
   await user.type(inputGame, "Fritz");
   await user.type(inputPlayers, "Klaus, Sven");
   await user.click(button);
+  await user.click(form);
+  await handleSubmit({
+    nameOfGame: "Fritz",
+    playerNames: ["Klaus", "Sven"],
+  });
 
+  expect(inputGame).toBeInTheDocument();
+  expect(inputPlayers).toBeInTheDocument();
   expect(button).toBeInTheDocument();
   expect(handleSubmit).toHaveBeenCalledTimes(1);
 
@@ -64,7 +94,63 @@ test("submits the correct form data when every field is filled out", async () =>
   );
 });
 
-test("does not submit form if one input field is left empty", async () => {});
+test("does not submit form if one input field is left empty", async () => {
+  const handleSubmit = jest.fn();
+  const onCreateGame = jest.fn();
+
+  const user = userEvent.setup();
+
+  render(
+    <GameForm onCreateGame={onCreateGame}>
+      <Form
+        onSubmit={handleSubmit}
+        aria-labelledby="formHeader"
+        autoComplete="off"
+      >
+        <h2 id="formHeader">Create a new game</h2>
+        <Input
+          name="nameOfGame"
+          labelText="Name of game"
+          placeholder="e.g. Dodelido"
+          //required
+        />
+        <Input
+          name="playerNames"
+          labelText="Player names, separated by comma"
+          placeholder="e.g. John Doe, Jane Doe"
+          //required
+        />
+        <Button type="submit">Create game</Button>
+      </Form>
+    </GameForm>
+  );
+
+  const form = screen.getByRole("form", { name: /Create a new game/i });
+  const button = screen.getByRole("button", { name: "Create game" });
+  const inputGame = screen.getByLabelText(/Name of game/i);
+  const inputPlayers = screen.getByLabelText(
+    /Player names, separated by comma/i
+  );
+
+  await user.type(inputGame, "Fritz");
+  // await user.type(inputPlayers, "Klaus, Sven");
+  await user.click(button);
+  await user.click(form);
+  // await handleSubmit({
+  //   nameOfGame: "Fritz",
+  //   playerNames: ["Klaus", "Sven"],
+  // });
+
+  expect(inputGame).toBeInTheDocument();
+  expect(inputPlayers).toBeInTheDocument();
+  expect(button).toBeInTheDocument();
+  expect(handleSubmit).toHaveBeenCalledTimes(0);
+
+  // expect(handleSubmit).toHaveBeenCalledWith({
+  //   nameOfGame: "Fritz",
+  //   playerNames: ["Klaus", "Sven"],
+  // })
+});
 
 // - To check the submitted form data, make sure to
 //   - mock the submit handle function first;
