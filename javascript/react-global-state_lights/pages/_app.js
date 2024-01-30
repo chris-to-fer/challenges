@@ -34,7 +34,7 @@ export default function App({ Component, pageProps }) {
   const lightsOn = light.filter((e) => e.isOn === true).length;
   let isDimmed = false;
   lightsOn < 1 ? (isDimmed = "true") : (isDimmed = "false");
-
+  isDimmed = lightsOn < 1 ? true : false;
   // const isDimmed =
   //   light.filter((light) => light.isOn === false).length === light.length;
   return (

@@ -10,7 +10,7 @@ const Background = styled.div`
   inset: 0;
   background-color: black;
   z-index: -1;
-  filter: ${({ $isDimmed }) => ($isDimmed ? "none" : "brightness(70%)")};
+  filter: ${({ $isDimmed }) => ($isDimmed ? "brightness(20%)" : "none")};
 
   transition: filter 1.2s;
 `;
@@ -33,7 +33,7 @@ export default function Layout({ lightsOn, children, isDimmed }) {
 
   return (
     <StyledLayout>
-      <Background $isDimmed="{isDimmed}">
+      <Background $isDimmed={isDimmed}>
         <StyledImage src="/images/home.jpg" fill alt="" />
       </Background>
       <Content>{children}</Content>
