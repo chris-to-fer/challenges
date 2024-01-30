@@ -10,7 +10,8 @@ const Background = styled.div`
   inset: 0;
   background-color: black;
   z-index: -1;
-  filter: ${({ $isDimmed }) => ($isDimmed ? "brightness(70%)" : "none")};
+  filter: ${({ $isDimmed }) => ($isDimmed ? "brightness(20%)" : "none")};
+
   transition: filter 1.2s;
 `;
 
@@ -26,7 +27,10 @@ const Content = styled.div`
   padding: 32px 0;
 `;
 
-export default function Layout({ children, isDimmed }) {
+export default function Layout({ lightsOn, children, isDimmed }) {
+  console.log("laslight ", lightsOn);
+  console.log("isdimmed ", isDimmed);
+
   return (
     <StyledLayout>
       <Background $isDimmed={isDimmed}>
