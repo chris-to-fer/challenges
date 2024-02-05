@@ -1,13 +1,19 @@
-import Image from "next/image";
+import React from "react";
 import Link from "next/link";
-import { volumes } from "../../lib/data.js";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import { volumes } from "@/lib/data";
+import Image from "next/image";
 
 export default function VolumeDetail() {
-  const volumeIndex = volumes.findIndex(
-    ({ slug }) => slug === "the-fellowship-of-the-ring"
-  );
+  const router = useRouter();
+  const { slug } = router.query;
+  console.log("slug ", slug);
+
+  const volumeIndex = volumes.findIndex((e) => e.slug === slug);
 
   const volume = volumes[volumeIndex];
+
   const nextVolume = volumes[volumeIndex + 1];
   const previousVolume = volumes[volumeIndex - 1];
 
@@ -16,14 +22,17 @@ export default function VolumeDetail() {
   }
 
   const { title, description, cover, books } = volume;
-
+  console.log("title ", title);
   return (
     <>
+      <Head>
+        <title>{volume.title}</title>
+      </Head>
       <Link href="/volumes">← All Volumes</Link>
       <h1>{title}</h1>
       <p>{description}</p>
       <ul>
-        {books.map(({ ordinal, title }) => (
+        {books?.map(({ ordinal, title }) => (
           <li key={title}>
             {ordinal}: <strong>{title}</strong>
           </li>
