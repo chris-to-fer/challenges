@@ -24,10 +24,12 @@ export default function Product() {
       <p>
         Price: {data.price} {data.currency}
       </p>
+      <h4>Reviews:</h4>
       {data.reviews &&
-        data.reviews.map((e) => (
+        data.reviews.map((e, index) => (
           <div key={e._id}>
             <p>{e.title}</p> <p>{e.text}</p> <p>Rating: {e.rating}</p>
+            {index === data.reviews.length - 1 ? "" : <hr></hr>}
           </div>
         ))}
       <StyledLink href="/">Back to all</StyledLink>
